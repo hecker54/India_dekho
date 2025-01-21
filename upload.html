@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Your Content</title>
+    <link rel="stylesheet" href="upload.css">
+</head>
+<body>
+    <!-- Background Video -->
+    <video autoplay muted loop id="backgroundVideo">
+        <source src="bgvideo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Upload Form -->
+    <div class="form-container">
+        <h2>Upload Your Content</h2>
+        <form action="successfulupload.html" method="post" enctype="multipart/form-data">
+            <label for="image">Upload Image:</label>
+            <input type="file" id="image" name="image" accept="image/*" required>
+
+            <label for="text">Content Text (1000 words max):</label>
+            <textarea id="text" name="text" maxlength="1000" rows="10" required></textarea>
+
+            <label for="publishedBy">Published By:</label>
+            <input type="text" id="publishedBy" name="publishedBy" required>
+
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+</body>
+</html>

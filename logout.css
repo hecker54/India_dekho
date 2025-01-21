@@ -1,0 +1,124 @@
+/* Apply a full-screen background animation */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* Prevent scrolling */
+    background: linear-gradient(45deg, #ffee00, #0a97d8, #0cb4b9, #00e1ff);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+}
+
+/* Center the container */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Styling for the message block */
+.message {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: slideIn 1s ease;
+}
+
+/* Heading styling */
+.message h1 {
+    font-size: 3em;
+    margin: 0;
+    color: #333;
+    animation: bounceIn 1s ease;
+}
+
+/* Paragraph styling */
+.message p {
+    font-size: 1.2em;
+    color: #666;
+    margin: 10px 0;
+    animation: fadeIn 1s ease;
+}
+
+/* Logout button styling */
+.logout-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Button hover effect */
+.logout-button:hover {
+    background-color: #555;
+    transform: scale(1.1); /* Scale up on hover */
+    animation: shake 0.5s ease;
+}
+
+/* Button active effect */
+.logout-button:active {
+    transform: scale(0.9); /* Scale down on click */
+}
+
+/* Animation for the button */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounceIn {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    75% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+}
